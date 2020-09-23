@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package counter;
+
+service Counter {
+    rpc CountValue(stream Count) returns (Error) {}
+}
+
+message Count {
+    int32 value = 1;
+}
+
+message Error {
+    string msg = 1;
+}
